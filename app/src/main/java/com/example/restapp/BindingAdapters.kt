@@ -4,12 +4,8 @@ import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.restapp.network.SinglePhoto
 import com.example.restapp.overview.MyApiStatus
-import com.example.restapp.overview.OverviewFragmentAdapter
-
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -23,18 +19,11 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     }
 }
 
-@BindingAdapter("listData")
-fun bindRecyclerView(
-    recyclerView: RecyclerView,
-    data: List<SinglePhoto>?
-) {
-    val adapter = recyclerView.adapter as OverviewFragmentAdapter
-    adapter.submitList(data)
-}
-
 @BindingAdapter("myApiStatus")
-fun bindStatus(statusImageView: ImageView,
-               status: MyApiStatus?) {
+fun bindStatus(
+    statusImageView: ImageView,
+    status: MyApiStatus?
+) {
     when (status) {
         MyApiStatus.LOADING -> {
             statusImageView.visibility = View.VISIBLE

@@ -2,13 +2,6 @@ package com.example.restapp.network
 
 import com.squareup.moshi.Json
 
-/*data class SinglePhoto(
-    val id: String,
-   // @Json(name = "img_src") val imgSrcUrl: String
-    @Json(name = "url") val imgSrcUrl: String
-)*/
-
-
 data class SinglePhoto(
     val postLink: String,
     val subreddit: String,

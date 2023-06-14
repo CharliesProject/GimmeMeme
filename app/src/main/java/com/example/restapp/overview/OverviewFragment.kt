@@ -18,12 +18,7 @@ class OverviewFragment : Fragment() {
     ): View? {
         val binding = FragmentOverviewBinding.inflate(inflater)
 
-        binding.photosGrid.adapter = OverviewFragmentAdapter()
-
-        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
-
-        // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
         return binding.root
