@@ -15,12 +15,16 @@ class OverviewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentOverviewBinding.inflate(inflater)
-
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-
+        binding.exitBtn.setOnClickListener { closeApp() }
         return binding.root
     }
+
+    private fun closeApp() {
+        activity?.finish()
+    }
+
 }

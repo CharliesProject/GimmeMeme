@@ -12,10 +12,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
     imgUrl?.let {
         val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
-        imgView.load(imgUri) {
-            placeholder(R.drawable.loading_animation)
-            error(R.drawable.ic_broken_image)
-        }
+        imgView.load(imgUri) {}
     }
 }
 
@@ -25,6 +22,11 @@ fun bindStatus(
     status: MyApiStatus?
 ) {
     when (status) {
+
+        MyApiStatus.START -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_meme_vector_png_600x600)
+        }
         MyApiStatus.LOADING -> {
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.loading_animation)
@@ -32,6 +34,14 @@ fun bindStatus(
         MyApiStatus.ERROR -> {
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        MyApiStatus.EMPTY -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_broken_image)
+        }
+        MyApiStatus.UNKNOWN -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_unknown_error)
         }
         MyApiStatus.DONE -> {
             statusImageView.visibility = View.GONE

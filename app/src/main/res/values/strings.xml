@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">RestApp</string>
+    <string name="app_name">Gimme Meme!</string>
+    <string name="text_heading">Tap screen to get meme!</string>
+    <string name="exit_btn_text">Enough!</string>
 </resources>
