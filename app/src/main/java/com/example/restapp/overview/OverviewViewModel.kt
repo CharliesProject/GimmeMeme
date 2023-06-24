@@ -33,7 +33,6 @@ class OverviewViewModel : ViewModel() {
     )
     val emptyPhoto get() = _emptyPhoto
 
-
     init {
         startPhoto()
     }
