@@ -31,6 +31,8 @@ the screen, allowing users to gracefully exit the app whenever they desire.
 
 - If the user taps the screen to get a meme but loses internet connection or doesn't turn it on
 before running the app, a crossed cloud image will be displayed to inform about the offline error.
+- The application relies on an external API. The server may be temporarily unavailable or offline.
+In such a situation, the user will also see an image of a crossed-out cloud.
 - Some of the memes from the internet could be private or may no longer exist. In the event of
 attempting to display such an empty picture, a broken image will be shown to inform about the
 unreachable meme error.
